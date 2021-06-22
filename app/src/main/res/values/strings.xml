@@ -1366,4 +1366,8 @@
     <string name="mnu_filter_services">Filter Services</string>
     <string name="item_total_pins">Total pins: %d</string>
     <string name="item_service_name">Service name: %s</string>
+  <string name="mnu_normal">Normal</string>
+  <string name="mnu_satellite">Satellite</string>
+  <string name="mnu_terrain">Terrain</string>
+  <string name="mnu_hybrid">Hybrid</string>
 </resources>

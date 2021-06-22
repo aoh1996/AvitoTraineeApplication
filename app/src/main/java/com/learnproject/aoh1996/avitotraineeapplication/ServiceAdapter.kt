@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.CheckBox
-import android.widget.CompoundButton
 import android.widget.TextView
 import com.learnproject.aoh1996.avitotraineeapplication.data.DataHolder
 import com.learnproject.aoh1996.avitotraineeapplication.data.Service
@@ -46,7 +45,6 @@ class ServiceAdapter (context: Context, private val resource: Int, var services:
         viewHolder.tvTotalServices.text = String.format(context.getString(R.string.item_total_pins), currentService.servicePins.size)
         viewHolder.cbIsActive.setOnCheckedChangeListener { _, isChecked ->
             DataHolder.getInstance().toggleService(currentService.name, isChecked)
-            //MapsActivity.updateMap()
         }
 
 

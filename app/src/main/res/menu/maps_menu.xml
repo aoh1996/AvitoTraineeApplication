@@ -7,4 +7,21 @@
         android:icon="@drawable/ic_baseline_filter_list_24"
         android:title="@string/mnu_filter_services"
         app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/mnuNormal"
+        android:title="@string/mnu_normal"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/mnuSatellite"
+        android:title="@string/mnu_satellite"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/mnuTerrain"
+        android:title="@string/mnu_terrain"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/mnuHybrid"
+        android:title="@string/mnu_hybrid"
+        app:showAsAction="never"/>
+
 </menu>

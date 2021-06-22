@@ -1,6 +1,5 @@
 package com.learnproject.aoh1996.avitotraineeapplication.data
 
-import android.content.Context
 import com.learnproject.aoh1996.AvitoTraineeApplication
 import org.json.JSONException
 import org.json.JSONObject

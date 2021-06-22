@@ -6,9 +6,6 @@ import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Toast
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.Observer
 
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -18,8 +15,6 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.LatLngBounds
 import com.google.android.gms.maps.model.MarkerOptions
 import com.learnproject.aoh1996.avitotraineeapplication.data.DataHolder
-import com.learnproject.aoh1996.avitotraineeapplication.data.Pin
-import com.learnproject.aoh1996.avitotraineeapplication.data.Service
 import com.learnproject.aoh1996.avitotraineeapplication.databinding.ActivityMapsBinding
 import java.lang.IllegalStateException
 
@@ -44,7 +39,6 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         mapFragment.getMapAsync(this)
 
         dataHolder = DataHolder.getInstance()
-//        dataHolder.getData("pins.json")
 
         boundsBuilder = LatLngBounds.builder()
 
@@ -66,11 +60,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         map = googleMap
 
         updateMap()
-        
-//        dataHolder.servicesWithPins.observe(this, { newSet ->
-//            updateMap(newSet as HashMap<String, Service>)
-//        })
-        }
+    }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.maps_menu, menu)
@@ -79,14 +69,30 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
-        when(item.itemId) {
+        return when(item.itemId) {
             R.id.mnuFilter -> {
                 startActivity(Intent(this, FilterActivity::class.java))
+                true
             }
+            R.id.mnuNormal -> {
+                map.mapType = GoogleMap.MAP_TYPE_NORMAL
+                true
+            }
+            R.id.mnuSatellite -> {
+                map.mapType = GoogleMap.MAP_TYPE_SATELLITE
+                true
+            }
+            R.id.mnuTerrain -> {
+                map.mapType = GoogleMap.MAP_TYPE_TERRAIN
+                true
+            }
+            R.id.mnuHybrid -> {
+                map.mapType = GoogleMap.MAP_TYPE_HYBRID
+                true
+            }
+
             else -> return super.onOptionsItemSelected(item)
         }
-
-        return super.onOptionsItemSelected(item)
     }
 
 
